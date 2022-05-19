@@ -8,16 +8,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class Controlador2 {
     @Autowired
     PersonaService personaService;
 
     @GetMapping("/controlador2/getPersona")
-    public ResponseEntity<Persona> getPersona(){
+    public Persona getPersona(){
         Persona persona1 = personaService.getPersona();
         persona1.setEdad(persona1.getEdad() * 2);
-        return new ResponseEntity<>(personaService.getPersona(), HttpStatus.OK);
+        System.out.println(personaService);
+        return personaService.getPersona();
     }
 }
