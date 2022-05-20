@@ -4,6 +4,7 @@ import com.adri.ejercicio2.services.Ciudad;
 import com.adri.ejercicio2.services.Persona;
 import com.adri.ejercicio2.services.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
@@ -33,4 +34,5 @@ public class Controlador1 {
         System.out.println(Ejercicio2SpringApplication.cac.getBean("listaCiudades"));
         return ciudad;
     }
+
 }

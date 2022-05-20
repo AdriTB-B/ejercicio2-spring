@@ -22,7 +22,7 @@ public class Controlador2 {
         return personaService.getPersona();
     }
 
-    @GetMapping("/controlador1/getCiudad")
+    @GetMapping("/controlador2/getCiudad")
     public List<Ciudad> getCiudad(){
         return (List<Ciudad>) Ejercicio2SpringApplication.cac.getBean("listaCiudades");
     }
