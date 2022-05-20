@@ -1,14 +1,13 @@
 package com.adri.ejercicio2;
 
+import com.adri.ejercicio2.services.Ciudad;
 import com.adri.ejercicio2.services.Persona;
 import com.adri.ejercicio2.services.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class Controlador2 {
@@ -21,5 +20,10 @@ public class Controlador2 {
         persona1.setEdad(persona1.getEdad() * 2);
         System.out.println(personaService);
         return personaService.getPersona();
+    }
+
+    @GetMapping("/controlador1/getCiudad")
+    public List<Ciudad> getCiudad(){
+        return (List<Ciudad>) Ejercicio2SpringApplication.cac.getBean("listaCiudades");
     }
 }

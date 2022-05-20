@@ -4,14 +4,8 @@ import com.adri.ejercicio2.services.Ciudad;
 import com.adri.ejercicio2.services.Persona;
 import com.adri.ejercicio2.services.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @RestController
 public class Controlador1 {
@@ -33,8 +27,10 @@ public class Controlador1 {
 
     @PostMapping("/controlador1/addCiudad")
     public Ciudad addCiudad(@RequestBody Ciudad ciudad){
-        Ejercicio2SpringApplication.cac.getBean("listaCiudades");
+        System.out.println(Ejercicio2SpringApplication.cac.getBean("listaCiudades"));
+        List<Ciudad> listaBean = (List<Ciudad>) Ejercicio2SpringApplication.cac.getBean("listaCiudades");
+        listaBean.add(ciudad);
+        System.out.println(Ejercicio2SpringApplication.cac.getBean("listaCiudades"));
         return ciudad;
     }
-
 }
