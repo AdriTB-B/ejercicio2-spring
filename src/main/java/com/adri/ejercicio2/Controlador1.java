@@ -16,11 +16,11 @@ public class Controlador1 {
 
     @GetMapping("/controlador1/addPersona")
     public Persona addPersona(@RequestHeader Map<String, String> headers) {
-        Persona persona1 = Persona.builder()
-                .nombre(headers.get("nombre"))
-                .edad(Integer.parseInt(headers.get("edad")))
-                .poblacion(headers.get("poblacion"))
-                .build();
+        Persona persona1 = new Persona(
+                headers.get("nombre"),
+                Integer.parseInt(headers.get("edad")),
+                headers.get("poblacion")
+        );
         personaService.setPersona(persona1);
         System.out.println(personaService);
         return persona1;

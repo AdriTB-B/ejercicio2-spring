@@ -8,11 +8,7 @@ public class PersonaServiceImpl implements PersonaService{
 
     @Override
     public void setPersona(Persona persona) {
-        this.persona = Persona.builder()
-                .nombre(persona.getNombre())
-                .edad(persona.getEdad())
-                .poblacion(persona.getPoblacion())
-                .build();
+        this.persona = persona;
     }
 
     @Override

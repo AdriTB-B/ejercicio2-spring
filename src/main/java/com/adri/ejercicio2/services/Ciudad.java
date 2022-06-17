@@ -4,9 +4,5 @@ import lombok.Builder;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-@Data
-@Builder
-public class Ciudad {
-    private String nombre;
-    private int numeroHabitantes;
-}
+
+public record Ciudad (String nombre, int numeroHabitantes) {}

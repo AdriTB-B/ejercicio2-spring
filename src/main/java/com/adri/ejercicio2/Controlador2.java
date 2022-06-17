@@ -16,10 +16,11 @@ public class Controlador2 {
 
     @GetMapping("/controlador2/getPersona")
     public Persona getPersona(){
-        Persona persona1 = personaService.getPersona();
-        persona1.setEdad(persona1.getEdad() * 2);
-        System.out.println(personaService);
-        return personaService.getPersona();
+        return new Persona(
+                personaService.getPersona().nombre(),
+                personaService.getPersona().edad() * 2,
+                personaService.getPersona().poblacion()
+        );
     }
 
     @GetMapping("/controlador2/getCiudad")

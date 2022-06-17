@@ -6,10 +6,5 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
-@Builder
-@Data
-public class Persona {
-    private String nombre;
-    private int edad;
-    private String poblacion;
-}
+public record Persona(String nombre, int edad, String poblacion) { }
+

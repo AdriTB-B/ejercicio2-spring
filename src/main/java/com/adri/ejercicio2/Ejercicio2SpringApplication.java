@@ -27,16 +27,16 @@ public class Ejercicio2SpringApplication {
 
 	@Bean("bean1")
 	public Persona personaBean1(){
-		return Persona.builder().nombre("bean1").build();
+		return new Persona("bean1", 0, null);
 	}
 
 	@Bean("bean2")
 	public Persona personaBean2(){
-		return Persona.builder().nombre("bean2").build();
+		return new Persona("bean2", 0, null);
 	}
 	@Bean("bean3")
 	public Persona personaBean3(){
-		return Persona.builder().nombre("bean3").build();
+		return new Persona("bean3", 0, null);
 	}
 
 }
